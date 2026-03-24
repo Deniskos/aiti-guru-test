@@ -1,73 +1,28 @@
-# React + TypeScript + Vite
+# Тестовое задание: форма авторизации и список товаров
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Условия:
 
-Currently, two official plugins are available:
+- Используй React (версия 18+).
+- Используй TypeScript (строгая типизация обязательна).
+- Работоспособность в актуальной версии Google Chrome.
+- Остальное (выбор стейт-менеджера, UI библиотек) на твоё усмотрение, но будь готов обосновать выбор.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Дизайн:
 
-## React Compiler
+- Реализация должна визуально соответствовать макету в Figma.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## API:
 
-## Expanding the ESLint configuration
+- В качестве источника данных использовать публичное API: [DummyJSON Products.](https://dummyjson.com/docs/products)
+- Для авторизации использовать: [DummyJSON Auth](https://dummyjson.com/docs/auth)
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Функциональные требования:
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+1. Форма входа: - Валидация полей (обязательность заполнения). - Обработка ошибок: если API возвращает ошибку, выводить уведомление или текст ошибки под полями. - Ссылка на слове “Создать” никуда не ведёт.
+2. Логика запоминания данных для входа:: - Если чекбокс установлен, нужно сохранять токен авторизации так, чтобы сессия жила после закрытия браузера - Если не установлен, то сессия должна сбрасываться при закрытии вкладки
+3. Вывод списка товаров: - Соответствие столбцам из макета Figma - Прогресс-бар при подгрузке - Подгрузка данных из API.
+4. Сортировка: - Возможность сортировки по столбцам (например, по цене или рейтингу). - Должно храниться состояние сортировки
+5. Добавление товара: - По нажатию кнопки "Добавить" открывается форма добавления товара с возможностью заполнить основные поля: Наименование, цена, вендор, артикул. Дизайн использовать любой. - При успешном добавлении показывать базовое Toast уведомление - Логику сохранения через API делать при этом не нужно.
+6. Логика интерфейса: - Если рейтинг товара ниже 3.5, значение должно подсвечиваться красным цветом. - Иконка с тремя точками в кругу - заглушка - Кнопка рефреш таблицы - возможность отсортировать по возрастанию, убыванию. Признаки сортировки и дизайн на свое усмотрение
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+7. Поиск товаров: - Использовать API
