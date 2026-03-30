@@ -1,0 +1,49 @@
+.container {
+	background-color: var(--background);
+}
+
+.loading {
+	margin-top: 50px;
+	text-align: center;
+}
+
+.searchWrapper {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+	height: 100px;
+	margin: 20px 0 30px;
+
+	& h1 {
+		position: absolute;
+		left: 30px;
+	}
+}
+
+.search {
+	width: 50%;
+	height: 48px;
+	padding-left: 40px;
+	margin: 16px 0;
+	border-radius: 8px;
+	border: 1px solid #ddd;
+	background-color: var(--background);
+	font-size: 14px;
+	line-height: 24px;
+	background-image: url("/icons/search.svg");
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-position: 10px center;
+	background-size: 24px 24px;
+}
+
+.section {
+	padding: 0 30px;
+	background-color: var(--white);
+}
+
+.main {
+	padding-top: 15px;
+	padding-bottom: 30px;
+}
