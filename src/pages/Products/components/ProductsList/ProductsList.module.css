@@ -1,0 +1,109 @@
+.loading {
+	margin-top: 50px;
+	text-align: center;
+}
+
+.image {
+	display: inline-block;
+	width: 48px;
+	height: 48px;
+	margin-right: 10px;
+
+	border-radius: 8px;
+}
+
+.noImg {
+	background-color: #c4c4c4;
+}
+
+.productNameWrapper {
+	display: inline-flex;
+	flex-direction: column;
+}
+
+.productName {
+	color: var(--black);
+}
+
+.firstTd {
+	display: flex;
+}
+
+.table {
+	width: 100%;
+	margin-bottom: 20px;
+	border-collapse: collapse;
+}
+
+.table tr:last-child td {
+	border-bottom: 1px solid #eee;
+}
+
+.table th {
+	text-align: left;
+	color: #b2b3b9;
+	font-weight: 400;
+	padding: 10px 0;
+
+	&:not(:first-child) {
+		text-align: center;
+	}
+}
+
+.table td {
+	padding: 12px 0;
+	border-top: 1px solid #eee;
+
+	&:not(:first-child) {
+		text-align: center;
+	}
+
+	&:last-child {
+		padding-right: 50px;
+	}
+}
+
+.plusWrapper {
+	display: inline-flex;
+	align-items: center;
+}
+
+.plus {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	background: var(--primary);
+	color: white;
+	border: none;
+	border-radius: 40px;
+	width: 52px;
+	height: 27px;
+	font-size: 30px;
+	font-weight: 200;
+	cursor: pointer;
+}
+
+.category {
+	display: block;
+	color: #b2b3b9;
+}
+
+.smallRating {
+	color: var(--red);
+}
+
+.dummy {
+	display: inline-block;
+	width: 32px;
+	height: 32px;
+	margin-left: 20px;
+	background-image: url("/icons/dots.svg");
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-position: center center;
+	background-size: 32px 32px;
+}
+
+.loading td {
+	height: 387px;
+}

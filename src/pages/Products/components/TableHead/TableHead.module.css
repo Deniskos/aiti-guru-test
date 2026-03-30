@@ -1,0 +1,62 @@
+.header {
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 12px;
+}
+
+.headLeft,
+.headRight {
+	display: flex;
+	align-items: center;
+}
+
+.sortWrapper {
+	margin-left: 10px;
+}
+
+.sortOrderButton {
+	margin-left: 5px;
+	cursor: pointer;
+}
+
+.add {
+	display: flex;
+	align-items: center;
+	margin-left: 10px;
+	background: var(--primary);
+	color: white;
+	font-size: 14px;
+	font-weight: bold;
+	border: none;
+	padding: 13px 20px 13px 60px;
+	border-radius: 6px;
+	background-image: url("/icons/add.svg");
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-position: 20px center;
+	background-size: 22px 22px;
+	cursor: pointer;
+}
+
+.reset {
+	width: 42px;
+	height: 42px;
+	border: 1px solid var(--gray);
+	border-radius: 8px;
+	background-image: url("/icons/ArrowsClockwise.svg");
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-position: center center;
+	background-size: 22px 22px;
+	background-color: var(--white);
+	cursor: pointer;
+	transition: all 0.2s ease;
+}
+
+.reset:hover {
+	background-color: var(--background);
+}
+
+.reset:active {
+	background-color: var(--white);
+}
